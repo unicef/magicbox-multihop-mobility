@@ -2,7 +2,17 @@
 
 # Overview
 
-The purpose of this project is introducing a bash file that calculates the multi-hop values given the database tble represents the mobility of each user.  While the problem was solved for PostgreSQL, note that the requirement is to adjust based on Oracle 11, so this needs to be adjusted in near future.
+The purpose of this project is introducing a SQL script that calculates the multi-hop values given the database tble represents the mobility of each user.  While the problem was solved for PostgreSQL, note that the requirement is to adjust based on Oracle 11, so this needs to be adjusted in near future.
+
+# Contributors
+
+Here show the contributors and their Githubs
+
+Christopher Tate: https://github.com/computate
+
+David Kaylor: https://github.com/d-kaylor
+
+Bryant Son: https://github.com/bryantson
 
 # Calculating Multi-Hop Mobility using SQL 
 What is multi-hop? According to wikpedia (see [Multi-Hopping](https://en.wikipedia.org/wiki/Multi-hop_routing), Multi-hop routing (or multihop routing) is a type of communication in radio networks in which network coverage area is larger than radio range of single nodes. Therefore, to reach some destination a node can use other nodes as relays. 
@@ -118,11 +128,35 @@ INSERT INTO  mobility(sim_id, created, event, site_id) values('0002', timestamp 
 INSERT INTO  mobility(sim_id, created, event, site_id) values('0002', timestamp '2018-10-11 01:00', 'sms', 'A');
 INSERT INTO  mobility(sim_id, created, event, site_id) values('0002', timestamp '2018-10-11 02:00', 'sms', 'B');
 ```
-You can also download from (https://github.com/bryantson/UNICEFTest/blob/master/sample/sampleData.sql)
+You can also download from sampleData.sql
 
-3. Write to bash shell script to be writable
 
-4. Run the bash script and see the output
+3. Run the SQL script and see the output
+
+```sql
+SELECT site1, site2, count(*) num FROM (
+	SELECT sim_id, site1, site2 FROM (
+		SELECT m3.sim_id, m4.site_id site1, m5.site_id site2, m3.created1, m3.created2 FROM (
+				SELECT m1.sim_id, m1.created created1, m2.created created2 FROM mobility m1 
+				INNER JOIN mobility m2 on m1.sim_id = m2.sim_id AND m1.created < m2.created 
+					GROUP BY m1.sim_id, m1.created, m2.created ORDER BY m1.sim_id, m1.created
+			) m3 
+			INNER JOIN mobility m4 ON m3.sim_id = m4.sim_id AND m3.created1 = m4.created 
+			INNER JOIN mobility m5 ON m3.sim_id = m5.sim_id AND m3.created2 = m5.created 
+			WHERE m4.site_id != m5.site_id
+			ORDER BY m3.sim_id, m3.created1, m3.created2
+		) m6 
+		GROUP BY m6.sim_id, m6.site1, m6.site2, m6.site1, m6.site2 HAVING m6.site1 != m6.site2
+	) m7 GROUP BY m7.site1, m7.site2
+;
+
+```
+
+![Result for sample](./media/result.png)
+
+
+You can also see from calculateMobileHop.sql
+
 
 That is all! 
 
