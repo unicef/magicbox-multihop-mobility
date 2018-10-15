@@ -2,7 +2,9 @@
 
 # Overview
 
-The purpose of this project is to find the best SQL script to calculate multi-hop values given a database table that represents the mobility of each user.  While the problem was solved for PostgreSQL, note that the requirement is to adjust based on Oracle 11, so this needs to be adjusted in near future. Please read the explanation below, and checkout the solutions we have so far. Please add any suggestions in an issue. If you have one, please submit a pull request with an alternative solution.
+The purpose of this project is to find the best SQL script to calculate multi-hop values given a database table that represents the mobility of each user.  While the problem was solved for PostgreSQL, note that the requirement is to adjust based on Oracle 11, so this needs to be adjusted in near future.
+
+Please read the explanation below, and checkout the solutions we have so far. Please add any suggestions in an issue. If you have one, please submit a pull request with an alternative solution.
 
 # Calculating Multi-Hop Mobility using SQL 
 What is multi-hop? According to wikpedia (see [Multi-Hopping](https://en.wikipedia.org/wiki/Multi-hop_routing), Multi-hop routing (or multihop routing) is a type of communication in radio networks in which network coverage area is larger than radio range of single nodes. Therefore, to reach some destination a node can use other nodes as relays. 
