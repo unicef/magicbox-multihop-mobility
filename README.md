@@ -2,7 +2,7 @@
 
 # Overview
 
-The purpose of this project is to find the best SQL script to calculate multi-hop values given a database table that represents call detail records (CRD). One version of the solution was written for PostgreSQL and has recently been updated with slight modifications to work with SQL Server 2008. Due to operational constraints that some users of this query could face, we are building it to work in older systems.
+The purpose of this project is to find the best SQL script to calculate multi-hop values given a database table that represents call detail records (CDRs). Due to operational constraints that some users of this query could face, we are building it to work in older systems like SQL Server 2008.
 
 Please read the explanation below, and check out the solutions we have so far. Please add any suggestions in an issue. If you have one, submit a pull request with an alternative solution.
 
