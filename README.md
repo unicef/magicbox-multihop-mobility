@@ -93,3 +93,8 @@ CA: 3
 
 CB: 2
 
+
+### Solutions so far
+
+1. [This](https://github.com/unicef/magicbox-multihop-mobility/tree/master/solutions/computate) solution uses a single query.
+2. [This](https://github.com/unicef/magicbox-multihop-mobility/tree/master/solutions/marcellamaki) solution uses a temporary table to store each individual's multi-hop trips, before performing an aggregation of all user multi-hop trips.
