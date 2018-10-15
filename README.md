@@ -2,7 +2,7 @@
 
 # Overview
 
-The purpose of this project is introducing a SQL script that calculates the multi-hop values given the database tble represents the mobility of each user.  While the problem was solved for PostgreSQL, note that the requirement is to adjust based on Oracle 11, so this needs to be adjusted in near future.
+The purpose of this project is to find the best SQL script to calculate multi-hop values given a database table that represents the mobility of each user.  While the problem was solved for PostgreSQL, note that the requirement is to adjust based on Oracle 11, so this needs to be adjusted in near future.
 
 # Contributors
 
