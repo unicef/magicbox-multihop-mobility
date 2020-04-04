@@ -98,5 +98,6 @@ CB: 2
 
 ### Solutions so far
 
-1. [A](https://github.com/unicef/magicbox-multihop-mobility/tree/master/solutions/computate) single query.
-2. [Use](https://github.com/unicef/magicbox-multihop-mobility/tree/master/solutions/marcellamaki) a temporary table to store each individual's multi-hop trips, before performing an aggregation of all user multi-hop trips.
+1. [A single query](https://github.com/unicef/magicbox-multihop-mobility/tree/master/solutions/computate).
+
+2. [Use a temporary table to store each individual's multi-hop trips, before performing an aggregation of all user multi-hop trips](https://github.com/unicef/magicbox-multihop-mobility/tree/master/solutions/marcellamaki).
