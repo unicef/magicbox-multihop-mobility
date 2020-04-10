@@ -8,7 +8,7 @@
 
 ```sql
 -- CREATE Database Table to store the information --
-CREATE TEABLE mobility(pk serial primary key, sim_id text, created timestamp, event text, site_id text);
+CREATE TABLE mobility(pk serial primary key, sim_id text, created timestamp, event text, site_id text);
 
 -- INSERT the Sample Data Sets into the mobility table --
 INSERT INTO mobility(sim_id, created, event, site_id) values('0001', timestamp '2018-10-11 00:00', 'sms', 'A');
